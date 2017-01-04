@@ -5,7 +5,7 @@
   本仓库主要收集一些网友制作的一键包,大部分也都是在github上可以找到的.
 都是开源的,为了方便,我都收集在这里,尽量把安装介绍写的详细点,有任何疑问请联系我.
 
-- website:http://www.vpsxt.com
+- VPS学堂:[http://www.vpsxt.com](http://www.vpsxt.com "http://www.vpsxt.com")
 - QQ:78025108
 
 
@@ -64,10 +64,12 @@ unixbench进行跑分测试，单核和多核不同跑分
 
 
 ----------
-- 使用方法
+- **使用方法**
 
-wget down.vpsmm.com/name.sh
-chmod +x name.sh
-./name.sh
+wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/yourbash.sh
+
+chmod +x yourbash.sh
+
+./yourbash.sh
 
 
