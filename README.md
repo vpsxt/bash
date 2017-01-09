@@ -16,6 +16,11 @@
 作用:测试VPS基础信息，以及下载速度
 
 ----------
+- da1443.sh
+
+DirectAdmin 1.44.3 开心版x86/x64 + Capri 皮肤一键安装
+
+----------
 
 
 - 5hadows0cks-all.sh
