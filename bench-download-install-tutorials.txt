@@ -1,0 +1,7 @@
+wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/bench.sh
+
+chmod +x bench.sh
+
+./bench.sh
+
+
