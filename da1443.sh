@@ -3,7 +3,7 @@
 ###############################################################################
 # setup.sh
 # DirectAdmin  setup.sh  file  is  the  first  file  to  download  when doing a
-# DirectAdmin Install.   It  will  ask  you  for  relevant information and will 
+# DirectAdmin Install.   It  will  ask  you  for  relevant information and will
 # download  all  required  files.   If  you  are unable to run this script with
 # ./setup.sh  then  you probably need to set it's permissions.  You can do this
 # by typing the following:
@@ -25,7 +25,7 @@ ln -s /usr/lib/libcrypto.so /usr/lib/libcrypto.so.6
 
 echo "Download DA 1.44.3 scripts ...";
 mkdir -p /usr/local/directadmin
-wget -q -O da1443.tar.gz http://directadmin.u.qiniudn.com/da1443.tar.gz
+wget --no-check-certificate https://github.com/vpsxt/bash/raw/master/da1443.tar.gz
 tar xvf da1443.tar.gz -C /usr/local/directadmin
 
 echo "DA 1.44.3 scripts ready ...";
@@ -395,13 +395,13 @@ if [ "$SERVICES" = "" ]; then
 		echo "  services_debian60.tar.gz";
 		echo "  services_debian60_64.tar.gz";
 		echo "";
-	
+
 		echo -n "Type the filename: ";
 		read SERVICES
-	
+
 		echo "";
 		echo "Value entered: $SERVICES";
-	
+
 	        echo -n "Is this correct? (y,n) : ";
 	        read yesno;
 	}
@@ -525,14 +525,14 @@ if [ $OS = "FreeBSD" ]; then
 	NM2=`echo "ibase=16; $NMH2" | bc`
 	NM3=`echo "ibase=16; $NMH3" | bc`
 	NM4=`echo "ibase=16; $NMH4" | bc`
-	
+
 	NM=$NM1.$NM2.$NM3.$NM4;
 
 else
 	if [ $CMD_LINE -eq 0 ]; then
 
 		DEVS=`/sbin/ifconfig -a | grep -e "^[a-z]" | awk '{ print $1; }' | grep -v lo | grep -v sit0 | grep -v ppp0 | grep -v faith0`
-	
+
 		COUNT=0;
 		for i in $DEVS; do
 		{
@@ -545,9 +545,9 @@ else
 	        	echo -n "Please enter the name of your ethernet device: ";
 	        	read ETH_DEV;
 		elif [ $COUNT -eq 1 ]; then
-		
+
 			DIP=`/sbin/ifconfig $DEVS | grep 'inet addr:' | cut -d: -f2 | cut -d\  -f1`;
-		
+
         		echo -n "Is $DEVS your network adaptor with the license IP ($DIP)? (y,n) : ";
 		        read yesno;
         		if [ "$yesno" = "n" ]; then
@@ -567,7 +567,7 @@ else
 		        	echo "$i       $DIP";
 		        };
 		        done;
-		        
+
 		        echo "";
 		        echo -n "Enter the device name: ";
 		        read ETH_DEV;
@@ -585,7 +585,7 @@ else
 		IP=`/sbin/ifconfig $ETH_DEV | grep 'inet addr:' | cut -d: -f2 | cut -d\  -f1`;
 	fi
 
-	NM=`/sbin/ifconfig $ETH_DEV | grep 'Mask:' | cut -d: -f4`;	
+	NM=`/sbin/ifconfig $ETH_DEV | grep 'Mask:' | cut -d: -f4`;
 fi
 
 if [ $CMD_LINE -eq 0 ]; then
@@ -662,7 +662,7 @@ if [ $CMD_LINE -eq 0 ]; then
 				PHP_T=suPhp
 			fi
 		fi
-        
+
                 echo "You have chosen custombuild $CB_VER.";
 		echo "$CB_VER" > /root/.custombuild
 
@@ -695,12 +695,12 @@ if [ $CMD_LINE -eq 0 ]; then
                 else
                         echo "Using the default settings for custombuild.";
                 fi
-                
+
                 echo -n "Would you like to search for the fastest download mirror? (y/n): ";
                 read yesno;
                 if [ "$yesno" = "y" ]; then
                 	$BUILD set_fastest;
-			
+
 			if [ -s "${CB_OPTIONS}" ]; then
 				DL=`grep ^downloadserver= ${CB_OPTIONS} | cut -d= -f2`
 				if [ "${DL}" != "" ]; then
@@ -709,7 +709,7 @@ if [ $CMD_LINE -eq 0 ]; then
 				fi
 			fi
                 fi
-                
+
         else
                 echo "Using customapache with apache 1.3 and php 4.";
         fi
@@ -859,7 +859,7 @@ if [ $WGET -eq 0 ]; then
 			mv -f $WGET_PATH $WGET_PATH.old
 			mv -f $WGET_PATH.new $WGET_PATH
 			chmod 755 $WGET_PATH
-		fi			
+		fi
 	else
 		echo "*** wget not found: you *must* install wget (yum -y install wget)";
 		exit 2;
@@ -877,7 +877,7 @@ fi
 
 # Download the file that has the paths to all the relevant files.
 FILES=$SCRIPTS_PATH/files.sh
-if [ "$OS" != "FreeBSD" ]; then	
+if [ "$OS" != "FreeBSD" ]; then
 	FILES_PATH=$OS_VER
 	if [ "$OS" = "debian" ]; then
 
@@ -1004,7 +1004,7 @@ addPackage()
 		if [ ! -e $PACKAGES/$2 ]; then
 			echo "Error downloading $SERVER/$FILES_PATH/$2";
 		fi
-		
+
 		rpm -Uvh --nodeps --force $PACKAGES/$2
 	fi
 }
@@ -1124,7 +1124,7 @@ if [ "$OS" != "FreeBSD" ] && [ "$OS" != "debian" ]; then
 	/sbin/chkconfig named reset
 
         RNDCKEY=/etc/rndc.key
-	
+
 	if [ ! -s $RNDCKEY ]; then
 		echo "Generating new key: $RNDCKEY ...";
 
@@ -1156,12 +1156,12 @@ if [ "$OS" != "FreeBSD" ] && [ "$OS" != "debian" ]; then
 		echo "Template installed.";
         fi
 
-	
+
 fi
 
 if [ "$OS" = "FreeBSD" ]; then
 	if [ ! -e /etc/namedb/rndc.key ]; then
-		rndc-confgen -a -s $IP	
+		rndc-confgen -a -s $IP
 	fi
 	COUNT=`cat /etc/namedb/named.conf | grep -c listen`
 	if [ $COUNT -ne 0 ]; then
@@ -1182,7 +1182,7 @@ if [ "$OS" = "debian" ]; then
 	if [ ! -e /bin/nice ]; then
 		ln -s /usr/bin/nice /bin/nice
 	fi
-	
+
 	if [ "$KILLALL" -eq 0 ]; then
 		addPackage psmisc nothing psmisc
 	fi
