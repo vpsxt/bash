@@ -60,7 +60,19 @@ DirectAdmin 1.44.3 开心版x86/x64 + Capri 皮肤一键安装
 ----------
 - unixbench.sh
 
-unixbench进行跑分测试，单核和多核不同跑分
+unixbench进行跑分测试，单核和多核不同跑分.
+
+
+----------
+-  vhwinfo.sh
+
+一个测试vps信息的脚本.
+使用方法:
+
+
+wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/vhwinfo.sh -O - -o /dev/null|bash
+
+或者按照文本最底下方法使用.
 
 ----------
 - xwindow.sh
