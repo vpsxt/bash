@@ -23,7 +23,7 @@ echo "/      \_________\ |___/_/ /_/  |__/|__/___/_/ |_/_/    \____/   ";
 echo "\      /         / vHWINFO 1.1 May 2015 |                        ";
 echo "                                                                 ";
 echo "                                                                 ";
-echo "               本脚本有http://www.vpsxt.com收集整理              ";
+echo "               本脚本由http://www.vpsxt.com收集整理              ";
 echo "                                                                 ";
 echo "                                                                 ";
 

@@ -5,7 +5,7 @@
   本仓库主要收集一些网友制作的一键包,大部分也都是在github上可以找到的.
 都是开源的,为了方便,我都收集在这里,尽量把安装介绍写的详细点,有任何疑问请联系我.
 
-- VPS学堂:[http://www.vpsxt.com](http://www.vpsxt.com "http://www.vpsxt.com")
+- 沃园:[http://www.woyard.com](http://www.woyard.com "http://www.woyard.com")
 - QQ:78025108
 
 
