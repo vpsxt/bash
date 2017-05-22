@@ -17,7 +17,9 @@ CopyrightLogo='
 
 		        采用SSR+ss-panel V2+LAMP
 		
-		     ©2016-2017 mhans.cn.All rights received                          
+		     ©2016-2017 mhans.cn.All rights received  
+		     
+		              授权码:990731
 	              	
 ==========================================================================';
 echo "$CopyrightLogo";
