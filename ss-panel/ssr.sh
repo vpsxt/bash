@@ -17,9 +17,7 @@ CopyrightLogo='
 
 		        采用SSR+ss-panel V2+LAMP
 		
-		     ©2016-2017 mhans.cn.All rights received  
-		     
-		     安装授权码：990731
+		     ©2016-2017 mhans.cn.All rights received                          
 	              	
 ==========================================================================';
 echo "$CopyrightLogo";
@@ -128,9 +126,8 @@ CO='
 version=`lsb_release -a | grep -e Release|awk -F ":" '{ print $2 }'|awk -F "." '{ print 
 $1 }'`
 if [ $version == "6" ];then
-rpm -ivh ${web}${MirrorHost}/${ServerLocation}/epel-release-6-8.noarch.rpm  >/dev/null 
-2>&1
-rpm -ivh ${web}${MirrorHost}/${ServerLocation}/remi-release-6.rpm  >/dev/null 2>&1
+rpm -ivh http://mhans.ml/ssr/epel-release-6-8.noarch.rpm  >/dev/null 2>&1
+rpm -ivh http://mhans.ml/ssr/remi-release-6.rpm  >/dev/null 2>&1
 fi
 if [ $version == "7" ];then
 echo 
@@ -185,7 +182,7 @@ php-intl php-pecl-memcache
 service php-fpm start
 service httpd restart
 cd /var/www/html
-wget ${web}${MirrorHost}/${ServerLocation}/phpmyadmin.zip >/dev/null 2>&1
+wget http://mhans.ml/ssr/phpmyadmin.zip >/dev/null 2>&1
 unzip phpmyadmin.zip >/dev/null 2>&1 
 rm -f phpmyadmin.zip
 service php-fpm restart
@@ -207,7 +204,7 @@ cd /root
 yum -y install m2crypto python-setuptools
 easy_install pip
 pip install cymysql
-wget ${web}${MirrorHost}/${ServerLocation}/SSR.zip >/dev/null 2>&1
+wget http://mhans.ml/ssr/SSR.zip >/dev/null 2>&1
 unzip SSR.zip >/dev/null 2>&1
 cd shadowsocks
 cp apiconfig.py userapiconfig.py
@@ -218,7 +215,7 @@ cd /root
 mysqladmin -u root password $mysqlpass 
 mysql -uroot -p$mysqlpass -e"CREATE DATABASE shadowsocks;" 
 cd /var/www/html
-wget ${web}${MirrorHost}/${ServerLocation}/ss.zip >/dev/null 2>&1
+wget http://mhans.ml/ssr/ss.zip >/dev/null 2>&1
 unzip ss.zip >/dev/null 2>&1
 rm -rf ss.zip
 cd lib/
