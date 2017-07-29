@@ -130,7 +130,7 @@ vmware、hyper-v、virtualpc、virtualbox、openvz / virtuozzo、linux-vserver�
     wget –N —no–check–certificate 
     https://raw.githubusercontent.com/vpsxt/bash/master/vm_check.sh && bash vm_check.sh
 
-
+其实是和上面virt-what一样,只是简便一点而已.
 
 ----------
 
