@@ -84,9 +84,10 @@ wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/
 SSR-Bash-Python The Final Version 最终版
 
 本版特性：
-1.加入 auth_chain_b 支持
-2.实现离线化安装
-3.附赠客户端（安卓，PC）
+
+1. 加入 auth_chain_b 支持
+2. 实现离线化安装
+3. 附赠客户端（安卓，PC）
 
 
 安装指令：
