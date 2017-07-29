@@ -81,10 +81,21 @@ wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/
 
 
 ----------
-ssr
+SSR-Bash-Python The Final Version 最终版
+
+本版特性：
+1.加入 auth_chain_b 支持
+2.实现离线化安装
+3.附赠客户端（安卓，PC）
 
 
+安装指令：
 
+    yum install unzip wget #For Centos
+    apt install unzip wget #For Debian
+
+再执行一下命令:
+    `wget -c --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/ssr.zip && unzip ssr.zip && cd SSR* && bash install.sh`
 
 ----------
 使用virt-what判断VPS虚拟化技术
@@ -113,6 +124,16 @@ openvz
 
 vmware、hyper-v、virtualpc、virtualbox、openvz / virtuozzo、linux-vserver、uml、ibm powervm lx86 linux/x86 emulator、hitachi virtualization manager (hvm) virtage logical 、partitioning、ibm systemz、parallels、xen、qemu/kvm
 ----------
+检查vps是何种架构
+
+    wget –N —no–check–certificate 
+    https://raw.githubusercontent.com/vpsxt/bash/master/vm_check.sh && bash vm_check.sh
+
+
+
+----------
+
+
 
 - **使用方法**
 
