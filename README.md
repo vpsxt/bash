@@ -135,8 +135,19 @@ vmware、hyper-v、virtualpc、virtualbox、openvz / virtuozzo、linux-vserver�
 ----------
 domainmegabot的安装和使用:
 
+    wget --no-check-certificate https://github.com/vpsxt/bash/blob/master/domian/DomainMegaBot-master.zip
 
+然后解压缩:
 
+    unzip DomainMegaBot-master.zip
+    cd DomainMegaBot-master
+    gcc -o DomainMegaBot DomainMegaBot.c
+    ./DomainMegaBot
+
+如果出现解压缩失败的话先安装unzip.如果出现程序依赖错误请安装程序依赖.所以不妨在执行以上程序之前先执行一下程序:
+
+    yum -y install unzip
+    yum -y install gcc
 
 
 ----------
