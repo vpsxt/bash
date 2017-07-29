@@ -149,7 +149,7 @@ domainmegabot的安装和使用:
     yum -y install unzip
     yum -y install gcc
 
-
+官网:https://qing.su/article/namebot.html
 ----------
 
 
