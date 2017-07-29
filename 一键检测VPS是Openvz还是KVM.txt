@@ -1,0 +1,2 @@
+检查vps是何种架构的:wget –N —no–check–certificate 
+https://raw.githubusercontent.com/vpsxt/bash/master/vm_check.sh && bash vm_check.sh

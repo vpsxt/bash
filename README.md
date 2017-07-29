@@ -6,7 +6,7 @@
 都是开源的,为了方便,我都收集在这里,尽量把安装介绍写的详细点,有任何疑问请联系我.
 
 - 沃园:[http://www.woyard.com](http://www.woyard.com "http://www.woyard.com")
-- QQ:78025108
+- QQ:78025108 QQ群:253510359
 
 
 ----------
@@ -81,6 +81,39 @@ wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/
 
 
 ----------
+ssr
+
+
+
+
+----------
+使用virt-what判断VPS虚拟化技术
+
+首先安装程序依赖:
+
+    yum -y install gcc-c++
+
+####安装 ####
+
+    wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/virt-what-1.11.tar.gz
+    tar zxf virt-what-1.11.tar.gz   #解压缩包
+    cd virt-what-1.11   #进入目录
+    ./configure #按默认设置
+    make && make install#编译并安装
+
+####查看####
+
+    virt-what
+
+如果显示下面这样的就说明成功地测试到了vps的架构为openvz
+[root@localhost virt-what-1.11]# virt-what
+openvz
+
+这个工具可以检查到以下虚拟化创建的VPS：
+
+vmware、hyper-v、virtualpc、virtualbox、openvz / virtuozzo、linux-vserver、uml、ibm powervm lx86 linux/x86 emulator、hitachi virtualization manager (hvm) virtage logical 、partitioning、ibm systemz、parallels、xen、qemu/kvm
+----------
+
 - **使用方法**
 
 wget --no-check-certificate https://raw.githubusercontent.com/vpsxt/bash/master/yourbash.sh
