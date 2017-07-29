@@ -133,6 +133,13 @@ vmware、hyper-v、virtualpc、virtualbox、openvz / virtuozzo、linux-vserver�
 其实是和上面virt-what一样,只是简便一点而已.
 
 ----------
+domainmegabot的安装和使用:
+
+
+
+
+
+----------
 
 
 
