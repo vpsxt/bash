@@ -103,7 +103,7 @@ SSR-Bash-Python The Final Version 最终版
 
 首先安装程序依赖:
 
-    yum -y install gcc-c++
+    yum -y install gcc c++
 
 ####安装 ####
 

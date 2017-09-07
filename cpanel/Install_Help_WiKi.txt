@@ -1,0 +1,4 @@
+Linux系统执行以下指令即可：
+
+wget -c http://down.nbvps.com/demofiles/Panel/Cpanel/cpanel.sh && sh cpanel.sh
+

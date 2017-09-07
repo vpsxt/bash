@@ -1,0 +1,45 @@
+首先安装基本运行环境：
+
+yum install wget gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio libcom_err-devel libcurl-dev gd zlib-devel zip unzip libcap-devel cronie
+
+然后运行：yum install quota
+
+接下来正式安装DirectAdmin ：
+
+cd /tmp（到tmp文件夹，把脚本下载到这里）
+
+wget http://down.nbvps.com/demofiles/Panel/DirectAdmin/setup.sh  （下载脚本）
+
+chmod 755 setup.sh（更改脚本执行权限）
+
+./setup.sh（执行安装）
+
+下一步，系统会提示你输入DirectAdmin的Client ID和License ID
+
+然后HOTSNAME：可随意输入一个域名或二级域名
+
+提示Is this correct? Xen直接选择Yes，OpenVZ请选择No！
+
+再次提示Is this correct? Xen请选择Yes，OpenVZ可能需要输入您的主IP地址。
+
+Enter your choice（1 or 2 or 3）：2（这里选择2，安装最新PHP组件）
+
+接下来选择默认安装：
+
+Would you like the default settings of apache 2.2 and php 5 cli? (y/n): y（yes，默认安装）
+
+安装就开始了，安装完成后：
+
+最后，重启下DA并清理下残余文件。
+
+service directadmin restart （重启下DA）
+
+yum clean all （清理下残余文件）
+
+DA面板安装后，默认的初始密码会直接显示在屏幕上，忘记了怎么办？
+
+admin账号的密码和mysql的管理员账号和密码，可在 /usr/local/directadmin/scripts/setup.txt 里找到。
+
+如果admin密码被修改过，那上面的方法就行不通。
+
+可以连上ssh后，运行命令passwd admin
